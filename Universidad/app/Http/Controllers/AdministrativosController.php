@@ -15,6 +15,7 @@ class AdministrativosController extends Controller
      */
     public function index()
     {
+        // hola carlitos
         $administrativo =  DB::select("select * from administrativos order by Ap_Paterno, Ap_Materno, Nombre");
         return $administrativo;
     }
