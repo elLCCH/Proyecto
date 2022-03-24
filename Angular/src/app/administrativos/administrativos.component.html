@@ -1,0 +1,88 @@
+<div class="table-responsive">
+    <table class="table table-bordered table-striped table-hover table-dark">
+      <thead class="bg-danger ">
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Foto</th>
+          <th scope="col">Apellidos y Nombres</th>
+          <th scope="col">Sexo</th>
+          <!-- <th scope="col">F.Nacimiento</th> -->
+          <!-- <th scope="col">CI</th> -->
+          <!-- <th scope="col">Password</th> -->
+          <th scope="col">Tipo</th>
+          <!-- <th scope="col">Curso</th> -->
+          <th scope="col">Estado</th>
+          <th scope="col">Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let a of admin; let i= index"  >
+          <td>{{i+1}}</td>
+          <td style="padding: 0;">
+            <img [src]="ruta+a.Foto" width="60px" height="60px">
+          </td>
+          <td>
+            <!-- <input type="text" *ngIf="a.Editando" [(ngModel)]="a.Ap_Paterno"> -->
+            <span *ngIf="!a.Editando">{{a.Ap_Paterno}}⠀</span>
+            <!-- </td>
+                      <td> -->
+            <!-- <input type="text" *ngIf="a.Editando" [(ngModel)]="a.Ap_Materno"> -->
+            <span *ngIf="!a.Editando">{{a.Ap_Materno}}⠀</span>
+            <!-- </td>
+                      <td> -->
+            <!-- <input type="text" *ngIf="a.Editando" [(ngModel)]="a.Nombre"> -->
+            <span *ngIf="!a.Editando">{{a.Nombre}}</span>
+          </td>
+          <td>
+            <!-- <input type="text" *ngIf="a.Editando" [(ngModel)]="a.Sexo"> -->
+            <span *ngIf="!a.Editando">{{a.Sexo}}</span>
+          </td>
+          <!-- <td>
+            <input type="text" *ngIf="a.Editando" [(ngModel)]="a.FechNac">
+            <span *ngIf="!a.Editando">{{a.FechNac}}</span>
+          </td>
+          <td>
+            <input type="text" *ngIf="a.Editando" [(ngModel)]="a.CI">
+            <span *ngIf="!a.Editando">{{a.CI}}</span>
+          </td>
+         
+          <td>
+            <input type="text" *ngIf="a.Editando" [(ngModel)]="a.Password">
+            <span *ngIf="!a.Editando">{{a.Password}}</span>
+          </td> -->
+          <td>
+              <!-- <input type="text" *ngIf="a.Editando" [(ngModel)]="a.Tipo"> -->
+              <span *ngIf="!a.Editando">{{a.Tipo}}</span>
+          </td>
+          <!-- <td >
+              <span *ngIf="!a.Editando">{{a.curso_id}}</span>
+          </td> -->
+          <td>
+            <!-- <input type="text" *ngIf="a.Editando" [(ngModel)]="a.Estado"> -->
+            <span *ngIf="!a.Editando">{{a.Estado}}</span>
+          </td>
+  
+          <td>
+            <!-- <button type="button" class="btn btn-warning" (click)="a.Editando=true;" *ngIf="!a.Editando">Editar</button> -->
+            <button type="button" class="btn btn-success tamanio" data-toggle="modal" data-target="#ViewAdministrativo"
+              (click)='AdministrativoSeleccionado=a;' style="margin-right: 10px;"><i class="bi bi-eye"></i></button>
+
+            <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#ModalCursos"
+              (click)='AdministrativoSeleccionado=a;' (click)="CargarCurso();" style="margin-right: 10px;"><i class="bi bi-view-list"></i></button>
+
+            <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#myModal1"
+              (click)='AdministrativoSeleccionado=a;' style="margin-right: 10px;"><i class="bi bi-pencil"></i></button>
+
+            <button type="button" class="btn btn-warning" (click)="ModificarAdministrativo(a)" *ngIf="a.Editando"
+              (click)="a.Editando=true;"><i class="bi bi-box-arrow-up"></i></button>
+              
+            <button type="button" class="btn btn-danger" (click)="EliminarAdministrativo(a)"><i
+                class="bi bi-trash"></i></button>
+            <!-- <button type="button" class="btn btn-danger" (click)="seleccionado=a;">select</button> -->
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <!-- <span>{{seleccionado | json}}</span> -->
+  
+  </div>
