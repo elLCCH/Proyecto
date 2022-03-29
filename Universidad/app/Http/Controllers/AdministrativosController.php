@@ -38,7 +38,36 @@ class AdministrativosController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // if($request->hasFile('Foto')){
+        //     $file = $request->file('Foto');
+        //     $namefile = time().$file->getClientOriginalName();
+        //     $file->move(public_path().'/administrativos/',$namefile);
+        // }
+        // Ap_Paterno'
+        // Ap_Materno'
+        // Nombre',thi
+        // Sexo',this.
+        // FechNac',th
+        // CI',this.ne
+        // Password',t
+        // Tipo',this.
+        // Estado',thi
+
+        
+        $administrativo = new Administrativos();
+        // if($request->hasFile('Foto')){$administrativo->Foto = 'Administrativos/'.$namefile;}
+        // else{$administrativo->Foto = '';}
+        $administrativo->Ap_Paterno = $request->input('Ap_Paterno');
+        $administrativo->Ap_Materno= $request->input('Ap_Materno');
+        $administrativo->Nombre= $request->input('Nombre');
+        $administrativo->Sexo= $request->input('Sexo');
+        $administrativo->FechNac= $request->input('FechNac');
+        $administrativo->CI= $request->input('CI');
+        $administrativo->Tipo= $request->input('Tipo');
+        $administrativo->Password= $request->input('Password');
+        $administrativo->Estado= $request->input('Estado');
+        $administrativo->save();
+        return 'administrativo Guardado';
     }
 
     /**
@@ -74,15 +103,45 @@ class AdministrativosController extends Controller
     {
         //
     }
-
+    public function actualizarAdministrativo(Request $request, $id)
+    {
+        $Nom = $request->Ap_Paterno;
+        $requestData = $request->all();
+        // $administrativo =Administrativos::findOrFail($id);
+        // if ($request->hasFile('Foto')) 
+        // {
+        //     // ELIMINANDO ANTIGUA FOTO
+            
+        //     File::delete(public_path().'/'.$administrativo->Foto);
+        //     //REALIZANDO CARGA DE LA NUEVA FOTO
+        //     $file = $request->file('Foto');
+        //     $namefile = time().$file->getClientOriginalName();
+        //     $file->move(public_path().'/administrativos/',$namefile);
+            
+        //     // return 'paso';
+        // }
+        // // $requestData['Foto'] = 'Administrativos/'.$namefile;
+        
+        // if ($request->hasFile('Foto')) 
+        // {//SI TIENE FOTO ENTONCES EN Foto poner sus cosas
+        //     $requestData['Foto'] = 'administrativos/'.$namefile;
+        // }
+        // else
+        // {//SINO TIENE FOTO Y AUN ASI QUIERE ACTUALIZAR
+        //     $requestData['Foto'] = $administrativo->Foto;
+        // }
+        Administrativos::where('id','=',$id)->update($requestData);
+        return 'Datos administrativo Modificados';
+        // return $request;
+    }
     /**
      * Remove the specified resource from storage.
      *
      * @param  \App\Models\Administrativos  $administrativos
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Administrativos $administrativos)
+    public function destroy($asd)
     {
-        //
+        Administrativos::destroy($asd);
     }
 }

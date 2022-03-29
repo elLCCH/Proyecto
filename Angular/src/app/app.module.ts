@@ -17,6 +17,8 @@ import { FooterComponent } from './components/shared/footer/footer.component';
 import { SettingComponent } from './components/shared/setting/setting.component';
 import { PruebasComponent } from './pruebas/pruebas.component';
 import { LoginComponent } from './login/login.component';
+import { InicioComponent } from './inicio/inicio.component';
+import { ContactosComponent } from './contactos/contactos.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,9 @@ import { LoginComponent } from './login/login.component';
     FooterComponent,
     SettingComponent,
     PruebasComponent,
-    LoginComponent
+    LoginComponent,
+    InicioComponent,
+    ContactosComponent
   ],
   imports: [
     BrowserModule,

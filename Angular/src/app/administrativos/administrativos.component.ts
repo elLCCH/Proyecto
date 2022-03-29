@@ -9,12 +9,12 @@ import axios from 'axios';
 })
 export class AdministrativosComponent implements OnInit {
 
+  Texto;
   ruta = 'http://localhost:8000/';
   admin =[ ];
   
   AdministrativoSeleccionado = {
     id:'',
-    Foto:'',
     Ap_Paterno:'',
     Ap_Materno:'',
     Nombre:'',
@@ -23,13 +23,11 @@ export class AdministrativosComponent implements OnInit {
     CI:'',
     Password:'',
     Tipo:'',
-    curso_id:'',
     Estado:''
   };
   
 
   newAdministrativo = new FormGroup({
-    Foto:new FormControl(''),
     Ap_Paterno:new FormControl(''),
     Ap_Materno:new FormControl(''),
     Nombre:new FormControl(''),
@@ -38,7 +36,6 @@ export class AdministrativosComponent implements OnInit {
     CI:new FormControl(''),
     Password:new FormControl(''),
     Tipo:new FormControl(''),
-    curso_id:new FormControl(''),
     Estado:new FormControl('')
   });
   constructor() { }
@@ -49,6 +46,65 @@ export class AdministrativosComponent implements OnInit {
     console.log(this.ruta);
     this.CargarAdministrativo();
   }
+  AddAdministrativo(){
+    const formData = new FormData();
+    // formData.append('Foto',this.newAdministrativo.value.Foto);
+    formData.append('Ap_Paterno',this.newAdministrativo.value.Ap_Paterno);
+    formData.append('Ap_Materno',this.newAdministrativo.value.Ap_Materno);
+    formData.append('Nombre',this.newAdministrativo.value.Nombre);
+    formData.append('Sexo',this.newAdministrativo.value.Sexo);
+    formData.append('FechNac',this.newAdministrativo.value.FechNac);
+    formData.append('CI',this.newAdministrativo.value.CI);
+    formData.append('Password',this.newAdministrativo.value.Password);
+    formData.append('Tipo',this.newAdministrativo.value.Tipo);
+    formData.append('Estado','INACTIVO');
+    axios({
+      method:'post',
+      url:this.ruta+'api/Administrativo',
+      data:formData,
+      headers:{'Content-Type':'multipart/form-data'}
+    })
+    .then(res=>{
+      console.log('SE AÑADIO CORRECTAMENTE',res.data);
+      // console.log(res.data);
+      this.CargarAdministrativo();
+    })
+    .catch(error=>{
+      console.log('HAY ERROR XD');
+      console.log(error);
+    })
+  }
+  ModificarAdministrativo(Administrativo)
+  {
+    const formData = new FormData();
+    formData.append('Ap_Paterno',Administrativo.Ap_Paterno);
+    formData.append('Ap_Materno',Administrativo.Ap_Materno);
+    formData.append('Nombre',Administrativo.Nombre);
+    formData.append('Sexo',Administrativo.Sexo);
+    formData.append('FechNac',Administrativo.FechNac);
+    formData.append('CI',Administrativo.CI);
+    formData.append('Password',Administrativo.Password);
+    formData.append('Tipo',Administrativo.Tipo);
+    formData.append('Estado',Administrativo.Estado);
+    axios({
+      method:'post',
+      url:this.ruta+'api/actualizarAdministrativo/'+Administrativo.id,
+      data:formData,
+      headers:{'Content-Type':'multipart/form-data'}
+    })
+
+  
+    .then(res=>{
+      
+      console.log('SE MODIFICO CORRECTAMENTE');
+      console.log(res);
+      this.CargarAdministrativo();
+    })
+    .catch(error=>{
+      console.log('HAY ERROR AL MODIFICAR');
+      console.log(error);
+    })
+  }
   CargarAdministrativo() {
     axios.get(this.ruta+'api/Administrativo')
     .then(res => {
@@ -57,6 +113,15 @@ export class AdministrativosComponent implements OnInit {
       res.data.forEach(element => {
         element.Editando=false;
       });
+    }).catch(err =>  {
+    console.log("err");
+    });
+  }
+  EliminarAdministrativo(adminID){
+    axios.delete(this.ruta+'api/Administrativo/'+adminID)
+    .then(res => {
+      console.log(res.data);
+      this.CargarAdministrativo();
     }).catch(err =>  {
     console.log("err");
     });

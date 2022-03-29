@@ -1,3 +1,4 @@
+<button (click)="AddAdministrativo()" type="button" class="btn btn-primary" data-toggle="modal" data-target="#ModalAdd" data-whatever="@getbootstrap">AGREGAR ADMINISTRATIVO</button>
 <div class="table-responsive">
     <table class="table table-bordered table-striped table-hover table-dark">
       <thead class="bg-danger ">
@@ -37,19 +38,6 @@
             <!-- <input type="text" *ngIf="a.Editando" [(ngModel)]="a.Sexo"> -->
             <span *ngIf="!a.Editando">{{a.Sexo}}</span>
           </td>
-          <!-- <td>
-            <input type="text" *ngIf="a.Editando" [(ngModel)]="a.FechNac">
-            <span *ngIf="!a.Editando">{{a.FechNac}}</span>
-          </td>
-          <td>
-            <input type="text" *ngIf="a.Editando" [(ngModel)]="a.CI">
-            <span *ngIf="!a.Editando">{{a.CI}}</span>
-          </td>
-         
-          <td>
-            <input type="text" *ngIf="a.Editando" [(ngModel)]="a.Password">
-            <span *ngIf="!a.Editando">{{a.Password}}</span>
-          </td> -->
           <td>
               <!-- <input type="text" *ngIf="a.Editando" [(ngModel)]="a.Tipo"> -->
               <span *ngIf="!a.Editando">{{a.Tipo}}</span>
@@ -64,19 +52,13 @@
   
           <td>
             <!-- <button type="button" class="btn btn-warning" (click)="a.Editando=true;" *ngIf="!a.Editando">Editar</button> -->
-            <button type="button" class="btn btn-success tamanio" data-toggle="modal" data-target="#ViewAdministrativo"
+            <button type="button" class="btn btn-success tamanio" data-toggle="modal" data-target="#ModalVisualizacion"
               (click)='AdministrativoSeleccionado=a;' style="margin-right: 10px;"><i class="bi bi-eye"></i></button>
 
-            <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#ModalCursos"
-              (click)='AdministrativoSeleccionado=a;' (click)="CargarCurso();" style="margin-right: 10px;"><i class="bi bi-view-list"></i></button>
-
-            <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#myModal1"
+            <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#ModalModificacion"
               (click)='AdministrativoSeleccionado=a;' style="margin-right: 10px;"><i class="bi bi-pencil"></i></button>
 
-            <button type="button" class="btn btn-warning" (click)="ModificarAdministrativo(a)" *ngIf="a.Editando"
-              (click)="a.Editando=true;"><i class="bi bi-box-arrow-up"></i></button>
-              
-            <button type="button" class="btn btn-danger" (click)="EliminarAdministrativo(a)"><i
+           <button type="button" class="btn btn-danger" (click)="EliminarAdministrativo(a.id)"><i
                 class="bi bi-trash"></i></button>
             <!-- <button type="button" class="btn btn-danger" (click)="seleccionado=a;">select</button> -->
           </td>
@@ -86,3 +68,139 @@
     <!-- <span>{{seleccionado | json}}</span> -->
   
   </div>
+<!-- modal_adicion -->
+<div class="modal fade" id="ModalAdd" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">New message</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="mb-3" [formGroup]="newAdministrativo">
+         
+          <label for="Ap_Paterno" class="form-label">Ap. Paterno: </label>
+          <input type="text" class="form-control" formControlName="Ap_Paterno">
+          <label for="Ap_Materno" class="form-label">Ap. Materno: </label>
+          <input type="text" class="form-control" formControlName="Ap_Materno">
+          <label for="nombre" class="form-label">Nombre: </label>
+          <input type="text" class="form-control" formControlName="Nombre">
+          <label for="nombre" class="form-label">Sexo: </label>
+          <input type="text" class="form-control" formControlName="Sexo">
+          <label for="nombre" class="form-label">Fecha Nacimiento: </label>
+          <input type="date" class="form-control" formControlName="FechNac">
+          <label for="nombre" class="form-label">CI: </label>
+          <input type="text" class="form-control" formControlName="CI">
+          <label for="nombre" class="form-label">Contraseña: </label>
+          <input type="text" class="form-control" formControlName="Password">
+          <label for="nombre" class="form-label">Tipo: </label>
+          <input type="text" class="form-control" formControlName="Tipo">
+          <!-- <label for="nombre" class="form-label">Curso: </label> -->
+          <!-- <label for="nombre" class="form-label">Estado de Cuenta: </label>
+          <input type="text" class="form-control" formControlName="Estado"> -->
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+        <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="AddAdministrativo()">Guardar</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- MODAL_DE_MODIFICACION -->
+<div class="modal fade" id="ModalModificacion" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">New message</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="mb-3">
+          <!-- <input type="text" class="form-control" formControlName="Foto" [(ngModel)]="AdministrativoSeleccionado.Foto"> -->
+          <label for="nombre" class="form-label">Ap. Paterno: </label>
+          <input type="text" class="form-control" 
+            [(ngModel)]="AdministrativoSeleccionado.Ap_Paterno">
+          <label for="nombre" class="form-label">Ap. Materno: </label>
+          <input type="text" class="form-control" 
+            [(ngModel)]="AdministrativoSeleccionado.Ap_Materno">
+          <label for="nombre" class="form-label">Nombre: </label>
+          <input type="text" class="form-control" 
+            [(ngModel)]="AdministrativoSeleccionado.Nombre">
+          <label for="nombre" class="form-label">Sexo: </label>
+          <input type="text" class="form-control" [(ngModel)]="AdministrativoSeleccionado.Sexo">
+          <label for="nombre" class="form-label">Fecha Nacimiento: </label>
+          <input type="date" class="form-control" 
+            [(ngModel)]="AdministrativoSeleccionado.FechNac">
+          <label for="nombre" class="form-label">CI: </label>
+          <input type="text" class="form-control"  [(ngModel)]="AdministrativoSeleccionado.CI">
+          <label for="nombre" class="form-label">TIPO: </label>
+          <input type="text" class="form-control"  [(ngModel)]="AdministrativoSeleccionado.Tipo">
+          <label for="nombre" class="form-label">Curso: </label>
+          <!-- <input type="text" class="form-control" formControlName="curso_id" [(ngModel)]="AdministrativoSeleccionado.curso_id"> -->
+          <label for="nombre" class="form-label">Contraseña: </label>
+          <input type="text" class="form-control" 
+            [(ngModel)]="AdministrativoSeleccionado.Password">
+          <label for="nombre" class="form-label">Estado de Cuenta: </label>
+          <input type="text" class="form-control" 
+            [(ngModel)]="AdministrativoSeleccionado.Estado">
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+        <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="ModificarAdministrativo(AdministrativoSeleccionado)">Guardar</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- MODAL_DE_VISUALIZACION -->
+<div class="modal fade" id="ModalVisualizacion" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">New message</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="mb-3">
+          <!-- <input type="text" class="form-control" formControlName="Foto" [(ngModel)]="AdministrativoSeleccionado.Foto"> -->
+          <label for="nombre" class="form-label">Ap. Paterno: </label>
+          <input type="text" class="form-control" 
+            [(ngModel)]="AdministrativoSeleccionado.Ap_Paterno">
+          <label for="nombre" class="form-label">Ap. Materno: </label>
+          <input type="text" class="form-control" 
+            [(ngModel)]="AdministrativoSeleccionado.Ap_Materno">
+          <label for="nombre" class="form-label">Nombre: </label>
+          <input type="text" class="form-control" 
+            [(ngModel)]="AdministrativoSeleccionado.Nombre">
+          <label for="nombre" class="form-label">Sexo: </label>
+          <input type="text" class="form-control" [(ngModel)]="AdministrativoSeleccionado.Sexo">
+          <label for="nombre" class="form-label">Fecha Nacimiento: </label>
+          <input type="date" class="form-control" 
+            [(ngModel)]="AdministrativoSeleccionado.FechNac">
+          <label for="nombre" class="form-label">CI: </label>
+          <input type="text" class="form-control"  [(ngModel)]="AdministrativoSeleccionado.CI">
+          <label for="nombre" class="form-label">TIPO: </label>
+          <input type="text" class="form-control"  [(ngModel)]="AdministrativoSeleccionado.Tipo">
+          <label for="nombre" class="form-label">Curso: </label>
+          <!-- <input type="text" class="form-control" formControlName="curso_id" [(ngModel)]="AdministrativoSeleccionado.curso_id"> -->
+          <label for="nombre" class="form-label">Contraseña: </label>
+          <input type="text" class="form-control" 
+            [(ngModel)]="AdministrativoSeleccionado.Password">
+          <label for="nombre" class="form-label">Estado de Cuenta: </label>
+          <input type="text" class="form-control" 
+            [(ngModel)]="AdministrativoSeleccionado.Estado">
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">OK</button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('Ap_Materno')->nullable();
             $table->string('Nombre')->nullable();
             $table->string('Sexo')->nullable();
-            $table->date('FechNac')->nullable();
+              $table->date('FechNac')->nullable();
             $table->string('CI')->nullable();
             $table->string('Password')->nullable();
             $table->string('Tipo')->nullable();
