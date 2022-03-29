@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 Route::resource('Administrativo', 'App\Http\Controllers\AdministrativosController');
+Route::post('actualizarAdministrativo/{admin}', 'App\Http\Controllers\AdministrativosController@actualizarAdministrativo');
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();

@@ -1,3 +1,5 @@
+import { ContactosComponent } from './contactos/contactos.component';
+import { InicioComponent } from './inicio/inicio.component';
 import { LoginComponent } from './login/login.component';
 import { PruebasComponent } from './pruebas/pruebas.component';
 import { PDFMakerComponent } from './pdfmaker/pdfmaker.component';
@@ -12,6 +14,8 @@ const routes: Routes = [
   {path: 'PDFMaker', component:PDFMakerComponent},
   {path: 'Pruebas', component:PruebasComponent},
   {path: 'login', component:LoginComponent},
+  {path: 'Inicio', component:InicioComponent},
+  {path: 'Contactos', component:ContactosComponent},
 ];
 
 @NgModule({
