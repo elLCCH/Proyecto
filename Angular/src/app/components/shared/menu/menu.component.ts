@@ -6,10 +6,13 @@ import { Component, OnInit } from '@angular/core';
   // styleUrls: ['./menu.component.css']
 })
 export class MenuComponent implements OnInit {
+  ruta = 'http://localhost:8000/';
 
   constructor() { }
 
   ngOnInit(): void {
+    let rootVar = window['rutacion'];
+    this.ruta = rootVar;
   }
 
 }

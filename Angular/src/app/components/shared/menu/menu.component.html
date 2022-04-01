@@ -1,8 +1,8 @@
-<aside class="main-sidebar sidebar-dark-primary elevation-4">
+<aside class="main-sidebar sidebar-light-danger elevation-4" style="">
     <!-- Brand Logo -->
-    <a href="index3.html" class="brand-link">
-      <img src="assets/dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
-      <span class="brand-text font-weight-light">AdminLTE 3</span>
+    <a routerLink="index3.html" class="brand-link">
+      <img [src]="ruta+'fijos/escudoUnior.png'"  alt="Unior Escudo" class="brand-image img-circle elevation-3" style="opacity: .8">
+      <span class="brand-text font-weight-light" style="font-size: 15px;">Universidad Privada de Oruro</span>
     </a>
 
     <!-- Sidebar -->
@@ -10,17 +10,17 @@
       <!-- Sidebar user panel (optional) -->
       <div class="user-panel mt-3 pb-3 mb-3 d-flex">
         <div class="image">
-          <img src="assets/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
+          <img [src]="ruta+'fijos/foto.jpeg'" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="#" class="d-block">Alexander Pierce</a>
+          <a routerLink="/" class="d-block">Alejandra Mamani</a>
         </div>
       </div>
 
       <!-- SidebarSearch Form -->
       <div class="form-inline">
         <div class="input-group" data-widget="sidebar-search">
-          <input class="form-control form-control-sidebar" type="search" placeholder="Search" aria-label="Search">
+          <input class="form-control form-control-sidebar" type="search" placeholder="Buscar Estudiante" aria-label="Search">
           <div class="input-group-append">
             <button class="btn btn-sidebar">
               <i class="fas fa-search fa-fw"></i>
@@ -35,34 +35,51 @@
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
           <li class="nav-item menu-open">
-            <a href="#" class="nav-link active">
-              <i class="nav-icon fas fa-tachometer-alt"></i>
+            <a routerLink="/" class="nav-link active">
+              <i class="nav-icon fas fa-list-alt"></i>
               <p>
-                Starter Pages
+                Gestionar
                 <i class="right fas fa-angle-left"></i>
               </p>
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="#" class="nav-link active">
+                <a routerLink="/administrativos" class="nav-link active">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Active Page</p>
+                  <p>Gestionar Administrativos</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="#" class="nav-link">
+                <a routerLink="/" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Inactive Page</p>
+                  <p>Gestionar Docentes</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a routerLink="/" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Gestionar Cursos</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a routerLink="/" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Gestionar Calificaciones</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a routerLink="/" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Gestionar Publicaciones</p>
                 </a>
               </li>
             </ul>
           </li>
           <li class="nav-item">
-            <a href="#" class="nav-link">
+            <a routerLink="/" class="nav-link">
               <i class="nav-icon fas fa-th"></i>
               <p>
-                Simple Link
-                <span class="right badge badge-danger">New</span>
+                Horario
               </p>
             </a>
           </li>
