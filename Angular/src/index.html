@@ -28,19 +28,10 @@
   <link rel="stylesheet" href="assets/dist/css/adminlte.min.css">
 </head>
 
-<body class="hold-transition skin-blue sidebar-mini">
+<body class="hold-transition skin-blue sidebar-mini sidebar-closed sidebar-collapse">
   <div class="wrapper">
     <app-root></app-root>
   </div>
-
-<!-- jQuery -->
-  <script src="assets/plugins/jquery/jquery.min.js"></script>
-  <!-- Bootstrap 4 -->
-  <!-- <script src="assets/plugins/bootstrap/js/bootstrap.bundle.min.js"></script> -->
-  <!-- AdminLTE App -->
-  <script src="assets/dist/js/adminlte.min.js"></script>
-
-  
 
 
 
@@ -52,7 +43,17 @@
     integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous">
   </script>
 </body>
-
+<style>
+  body{
+  
+  /* background-image: url(" http://localhost:8000/fijos/fondopirata.jpg"); */
+  background-image:  linear-gradient(-10deg, #b12a02 -100%, #b12a02 100%);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed; 
+  }
+</style>
 
 
 <script type="text/javascript">
@@ -60,5 +61,14 @@
   // var rutacion = '';
 
 </script>
+
+<!-- jQuery -->
+<script src="assets/plugins/jquery/jquery.min.js"></script>
+<!-- Bootstrap 4 -->
+<!-- <script src="assets/plugins/bootstrap/js/bootstrap.bundle.min.js"></script> -->
+<!-- AdminLTE App -->
+<script src="assets/dist/js/adminlte.min.js"></script>
+
+
 
 </html>
