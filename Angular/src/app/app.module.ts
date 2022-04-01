@@ -19,6 +19,7 @@ import { PruebasComponent } from './pruebas/pruebas.component';
 import { LoginComponent } from './login/login.component';
 import { InicioComponent } from './inicio/inicio.component';
 import { ContactosComponent } from './contactos/contactos.component';
+import { ReporteComponent } from './reporte/reporte.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { ContactosComponent } from './contactos/contactos.component';
     PruebasComponent,
     LoginComponent,
     InicioComponent,
-    ContactosComponent
+    ContactosComponent,
+    ReporteComponent
   ],
   imports: [
     BrowserModule,
