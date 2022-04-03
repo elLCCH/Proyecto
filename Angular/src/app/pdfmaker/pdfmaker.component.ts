@@ -152,7 +152,7 @@ export class PDFMakerComponent implements OnInit {
             },
             {
               width: '*',
-              text: 'MÚSICA'
+              text: 'ING SISTEMAS'
             },
             {
               width: 90,
@@ -278,46 +278,17 @@ export class PDFMakerComponent implements OnInit {
       pageSize: 'LETTER',
 
       //ORIENTACION DE LA HOJA
-      // pageOrientation: 'landscape',
+      pageOrientation: 'landscape',
     
       // [left, top, right, bottom] or [horizontal, vertical] or just a number for equal margins
       pageMargins: [ 40, 60, 40, 60 ],
       // lineHeight:5,
       content:[
-        'Texto libre',
+        
 
-        {text:'FORMULARIO DE INSCRIPCIÓN ESTUDIANTES', fontSize:15, alignment: 'center', bold:true},
-        {text:'I.F.A. "MARIA LUISA LUZIO" \n\n', fontSize:15, alignment: 'center', bold:true},
-        // {
-        //   columns: [
-        //     {
-        //       width: 'auto',
-        //       text: 'First column'
-        //     },
-        //   ]
-        // },
+        {text:'FORMULARIO DE INSCRIPCIÓN', fontSize:15, alignment: 'center', bold:true},
+        {text:'UNIVERSIDAD PRIVADA "UNIOR" \n\n', fontSize:15, alignment: 'center', bold:true},
         {
-          // table: {
-          //   // headers are automatically repeated if the table spans over multiple pages
-          //   // you can declare how many rows should be treated as headers
-          //   headerRows: 1,
-          //   widths: ['*', '*'],
-
-          //   body: [
-          //     [{ text: 'Apellido Paterno \b asdasd', bold: true } , { text: 'Apellido Materno', bold: true }],
-          //     [{columns: [
-          //           {
-          //             width: 'auto',
-          //             text: 'Apellido Paterno'
-          //           },
-          //           {
-          //             width: 'auto',
-          //             text: 'CHOQUE'
-          //           },
-          //         ]}, 'Value 2'],
-          //     [{ text: 'Bold value', bold: true }, 'Val 2']
-          //   ]
-          // }
           table: {
             headerRows: 1,
             widths: ['*', '*'],
@@ -326,21 +297,8 @@ export class PDFMakerComponent implements OnInit {
               [
                 {text: [
                   // 'Inlines can be ',
-                  {text:'Apellido Paterno\n', fontSize:15, alignment: 'left', bold:true},
-                  {text: 'CHOQUE', fontSize: 14,alignment: 'right'}]
-                },
-                
-                {text: [
-                    // 'Inlines can be ',
-                    {text:'Apellido Materno\n', fontSize:15, alignment: 'left', bold:true},
-                    {text: 'CHOQUE', fontSize: 14,alignment: 'right'}]
-                }
-              ],
-              [
-                {text: [
-                  // 'Inlines can be ',
-                  {text:'Nombres\n', fontSize:15, alignment: 'left', bold:true},
-                  {text: 'LUIS', fontSize: 14,alignment: 'right'}]
+                  {text:'Correo Electronico\n', fontSize:15, alignment: 'left', bold:true},
+                  {text: 'abcdario@gmail.com', fontSize: 14,alignment: 'right'}]
                 },
                 
                 {text: [
@@ -353,7 +311,7 @@ export class PDFMakerComponent implements OnInit {
                 {text: [
                   // 'Inlines can be ',
                   {text:'Numero de celular del Estudiante\n', fontSize:15, alignment: 'left', bold:true},
-                  {text: '75142268', fontSize: 14,alignment: 'right'}]
+                  {text: '12345678', fontSize: 14,alignment: 'right'}]
                 },
                 
                 {text: [
@@ -366,41 +324,16 @@ export class PDFMakerComponent implements OnInit {
                 {text: [
                   // 'Inlines can be ',
                   {text:'Numero de Carnet\n', fontSize:15, alignment: 'left', bold:true},
-                  {text: '7362600', fontSize: 14,alignment: 'right'}]
+                  {text: '123456-OR', fontSize: 14,alignment: 'right'}]
                 },
                 
                 {text: [
                     // 'Inlines can be ',
                     {text:'Edad\n', fontSize:15, alignment: 'left', bold:true},
-                    {text: '14 Años', fontSize: 14,alignment: 'right'}]
+                    {text: '23 Años', fontSize: 14,alignment: 'right'}]
                 }
               ],
-              [
-                {text: [
-                  // 'Inlines can be ',
-                  {text:'Nombre del Padre\n', fontSize:15, alignment: 'left', bold:true},
-                  {text: 'CHOQUE GUTIERREZ PEDRO', fontSize: 14,alignment: 'right'}]
-                },
-                
-                {text: [
-                    // 'Inlines can be ',
-                    {text:'Nº Celular del Padre\n', fontSize:15, alignment: 'left', bold:true},
-                    {text: '12345678', fontSize: 14,alignment: 'right'}]
-                }
-              ],
-              [
-                {text: [
-                  // 'Inlines can be ',
-                  {text:'Nombre de la Madre\n', fontSize:15, alignment: 'left', bold:true},
-                  {text: 'CHOQUE FLORES MARIA', fontSize: 14,alignment: 'right'}]
-                },
-                
-                {text: [
-                    // 'Inlines can be ',
-                    {text:'Nº Celular de la Madre\n', fontSize:15, alignment: 'left', bold:true},
-                    {text: '12345678', fontSize: 14,alignment: 'right'}]
-                }
-              ],
+              
               [
                 {text: [
                   // 'Inlines can be ',
@@ -415,84 +348,13 @@ export class PDFMakerComponent implements OnInit {
                   {text: 'AVENIDA ILLINIOS ESQUINO SUD Nº6', fontSize: 14}], colSpan: 2 
                 }
               ],
-              [
-                {text: [
-                  // 'Inlines can be ',
-                  {text:'Turno\n', fontSize:15, alignment: 'left', bold:true},
-                  {text: 'MAÑANA', fontSize: 14,alignment: 'right'}]
-                },
-                
-                {text: [
-                    // 'Inlines can be ',
-                    {text:'Instrumento de Especialidad\n', fontSize:15, alignment: 'left', bold:true},
-                    {text: 'PIANO', fontSize: 14,alignment: 'right'}]
-                }
-              ],
               
             ]
             
           }
           
         },
-        {text:' ',fontSize:15, alignment: 'left', bold:true},
-        {text:'Solo para estudiantes antiguos', lineHeight:1.2,fontSize:15, alignment: 'left', bold:true},
-        {
-          columns: [
-            {
-              // auto-sized columns have their widths based on their content
-              width: 'auto',
-              text: 'Curso:'
-            },
-            {
-              // star-sized columns fill the remaining space
-              // if there's more than one star-column, available width is divided equally
-              width: '*',
-              text: 'PRIMERO SUPERIOR'
-            }
-          ],
-          
-          // optional space between columnsç
-          lineHeight:1.2,
-          columnGap: 110
-        },
-        {
-          columns: [
-            {
-              // auto-sized columns have their widths based on their content
-              width: 'auto',
-              text: 'Nombre del Docente:'
-            },
-            {
-              // star-sized columns fill the remaining space
-              // if there's more than one star-column, available width is divided equally
-              width: '*',
-              text: 'AMPARO CUBA MURILLO'
-            }
-          ],
-          
-          // optional space between columns
-          lineHeight:1.2,
-          columnGap: 30
-        },
-        {
-          columns: [
-            {
-              // auto-sized columns have their widths based on their content
-              width: 'auto',
-              text: 'Instrumento::'
-            },
-            {
-              // star-sized columns fill the remaining space
-              // if there's more than one star-column, available width is divided equally
-              width: '*',
-              text: 'PIANO'
-            }
-          ],
-          
-          // optional space between columns
-          lineHeight:1.2,
-          columnGap: 75
-        },
+        
         {text:'\n\n\n\n\n\n\n_______________________', fontSize:15, alignment: 'center', bold:true},
         {text:'Firma del Estudiante o Padre/Tutor',fontSize:10, alignment: 'center', bold:true},
         {text:'Nºcarnet: 7362600',fontSize:8, alignment: 'center', bold:true}
@@ -519,28 +381,25 @@ export class PDFMakerComponent implements OnInit {
       content:[
         // 'Texto libre',
         
-        {text:'INSTITUTO DE FORMACIÓN ARTÍSTICA "MARIA LUISA LUZIO"', fontSize:10, alignment: 'center', bold:true},
-        {text:'R.M. Nº 718/2016 - R.M. Nº 0695/2019', fontSize:10, alignment: 'center', bold:true},
-        {text:'CARRERA: MÚSICA', fontSize:10, alignment: 'center', bold:true},
-        {text:'ÁREA: ARTÍSTICA\n\n\n\n', fontSize:10, alignment: 'center', bold:true},
-        {text:'CUADRO DE INSCRIPCIONES DE ALUMNOS NUEVOS Y ANTIGUOS', fontSize:18, alignment: 'center', bold:true},
-        {text:'GESTION: 2021', fontSize:15, alignment: 'center', bold:true},
+        {text:'UNIVERSIDAD PRIVADA UNIOR', fontSize:10, alignment: 'center', bold:true},
+        {text:'Resolucion ####', fontSize:10, alignment: 'center', bold:true},
+        {text:'CARRERA: INGENIERIA', fontSize:10, alignment: 'center', bold:true},
+        {text:'LISTA DE ESTUDIANTES INSCRITOS', fontSize:18, alignment: 'center', bold:true},
+        {text:'GESTION: 2022\n\n\n', fontSize:15, alignment: 'center', bold:true},
         {
           style: 'tableExample',
 
           table: {
             headerRows: 1,
+
             body: [
               [
                 {text: 'Nº', style: 'tableHeader'}, 
                 {text: 'APELLIDOS Y NOMBRES', style: 'tableHeader'}, 
                 {text: 'CÉDULA DE IDENTIDAD', style: 'tableHeader'},
                 {text: 'FECHA DE NACIMIENTO', style: 'tableHeader'}, 
-                {text: 'SEXO', style: 'tableHeader'}, 
-                {text: 'DIRECCIÓN ACTUAL', style: 'tableHeader'}, 
+                {text: 'SEXO', style: 'tableHeader'},  
                 {text: 'CARRERA', style: 'tableHeader'}, 
-                {text: 'NIVEL', style: 'tableHeader'}, 
-                {text: 'TURNO', style: 'tableHeader'}, 
                 {text: 'MATRÍCULA', style: 'tableHeader'}, 
                 {text: 'CATEGORIA', style: 'tableHeader'}, 
                 {text: 'FECHA DE INSCRIPCION', style: 'tableHeader'} 
@@ -551,10 +410,7 @@ export class PDFMakerComponent implements OnInit {
                 '4060916 -OR',
                 '31/7/1982',
                 'MASCULINO',
-                'GENOVEBA RIOS Nº 11 Y CALATAYUD',
-                'MÚSICA',
-                'TÉCNICO SUPERIOR',
-                'NOCHE',
+                'ING SISTEMAS',
                 '001 - 0782OFW',
                 'NUEVO',
                 '23/1/2021'
@@ -565,10 +421,7 @@ export class PDFMakerComponent implements OnInit {
                 '4060916 -OR',
                 '31/7/1982',
                 'MASCULINO',
-                'GENOVEBA RIOS Nº 11 Y CALATAYUD',
-                'MÚSICA',
-                'TÉCNICO SUPERIOR',
-                'NOCHE',
+                'ING SISTEMAS',
                 '001 - 0782OFW',
                 'NUEVO',
                 '23/1/2021'
@@ -579,10 +432,7 @@ export class PDFMakerComponent implements OnInit {
                 '4060916 -OR',
                 '31/7/1982',
                 'MASCULINO',
-                'GENOVEBA RIOS Nº 11 Y CALATAYUD',
-                'MÚSICA',
-                'TÉCNICO SUPERIOR',
-                'NOCHE',
+                'ING INDUSTRIAL',
                 '001 - 0782OFW',
                 'NUEVO',
                 '23/1/2021'
@@ -593,10 +443,7 @@ export class PDFMakerComponent implements OnInit {
                 '4060916 -OR',
                 '31/7/1982',
                 'MASCULINO',
-                'GENOVEBA RIOS Nº 11 Y CALATAYUD',
-                'MÚSICA',
-                'TÉCNICO SUPERIOR',
-                'NOCHE',
+                'ING SISTEMAS',
                 '001 - 0782OFW',
                 'NUEVO',
                 '23/1/2021'
@@ -607,10 +454,7 @@ export class PDFMakerComponent implements OnInit {
                 '4060916 -OR',
                 '31/7/1982',
                 'MASCULINO',
-                'GENOVEBA RIOS Nº 11 Y CALATAYUD',
-                'MÚSICA',
-                'TÉCNICO SUPERIOR',
-                'NOCHE',
+                'ING INFORMATICA',
                 '001 - 0782OFW',
                 'NUEVO',
                 '23/1/2021'
@@ -621,10 +465,7 @@ export class PDFMakerComponent implements OnInit {
                 '4060916 -OR',
                 '31/7/1982',
                 'MASCULINO',
-                'GENOVEBA RIOS Nº 11 Y CALATAYUD',
-                'MÚSICA',
-                'TÉCNICO SUPERIOR',
-                'NOCHE',
+                'ING CIVIL',
                 '001 - 0782OFW',
                 'NUEVO',
                 '23/1/2021'
@@ -635,10 +476,7 @@ export class PDFMakerComponent implements OnInit {
                 '4060916 -OR',
                 '31/7/1982',
                 'MASCULINO',
-                'GENOVEBA RIOS Nº 11 Y CALATAYUD',
-                'MÚSICA',
-                'TÉCNICO SUPERIOR',
-                'NOCHE',
+                'ING SISTEMAS',
                 '001 - 0782OFW',
                 'NUEVO',
                 '23/1/2021'
@@ -659,13 +497,6 @@ export class PDFMakerComponent implements OnInit {
             vLineColor: function (i, node) {
               return (i === 0 || i === node.table.widths.length) ? 'black' : 'gray';
             },
-            // hLineStyle: function (i, node) { return {dash: { length: 10, space: 4 }}; },
-            // vLineStyle: function (i, node) { return {dash: { length: 10, space: 4 }}; },
-            // paddingLeft: function(i, node) { return 4; },
-            // paddingRight: function(i, node) { return 4; },
-            // paddingTop: function(i, node) { return 2; },
-            // paddingBottom: function(i, node) { return 2; },
-            // fillColor: function (rowIndex, node, columnIndex) { return null; }
           }
         },
       ]
@@ -674,12 +505,102 @@ export class PDFMakerComponent implements OnInit {
   }
   openFreeStyle(){
     const documentDefinition = {
-      content:[
-        'Texto libre',
+      pageSize: 'LETTER',
 
-        {text:'Texto personalizado', fontSize:30, alignment: 'right', bold:true},
-        {text:'Texto personalizado', fontSize:30, alignment: 'right', bold:true},
+      // by default we use portrait, you can change it to landscape if you wish
+      // pageOrientation: 'landscape',
+
+      // [left, top, right, bottom] or [horizontal, vertical] or just a number for equal margins
+      // pageMargins: [ 40, 60, 40, 60 ],
+      content: [
+        {
+          text: [
+            {text: 'BOLETA DE CALIFICACIONES - GESTIÓN 2022\n', bold:true, alignment:'center'},
+            {text: 'Nombre:  ', bold: true, fontSize:10},{text: 'ALEJANDRA MAMANI \n', bold: false, fontSize:10},
+            {text: 'Carrera: ', bold: true, fontSize:10},{text: 'INGENIERIA EN SISTEMAS \n', bold: false, fontSize:10},
+          ]
+        },
         
+        {
+          style: 'tableExample',
+          table: {
+			    widths: ['*', 'auto', 'auto', 'auto','auto','auto'],
+            body: [
+              [
+                  {text: 'Materia', fontSize: 12, bold: true,alignment: 'center'},
+                  {text: 'Primer Parcial', fontSize: 12, bold: true,alignment: 'center'},
+                  {text: 'Segundo Parcial', fontSize: 12, bold: true,alignment: 'center'},
+                  {text: 'Prácticas ', fontSize: 12, bold: true,alignment: 'center'},
+                  {text: 'Examen Final', fontSize: 12, bold: true,alignment: 'center'},
+                  {text: 'Nota Final', fontSize: 12, bold: true,alignment: 'center'}
+              ],
+              [
+                  {text: 'Algebra', fontSize: 10,alignment: 'center'},    
+                  {text: '75', fontSize: 10,alignment: 'center'},    
+                  {text: '63', fontSize: 10,alignment: 'center'},    
+                  {text: '80', fontSize: 10,alignment: 'center'},    
+                  {text: '67', fontSize: 10,alignment: 'center'},
+                  {text: '80', fontSize: 10,alignment: 'center'},
+              ],
+              [
+                {text: 'Análisis Discreto', fontSize: 10,alignment: 'center'},    
+                {text: '75', fontSize: 10,alignment: 'center'},    
+                {text: '63', fontSize: 10,alignment: 'center'},    
+                {text: '80', fontSize: 10,alignment: 'center'},    
+                {text: '67', fontSize: 10,alignment: 'center'},
+                {text: '80', fontSize: 10,alignment: 'center'},
+              ],
+              [
+                {text: 'Ecuaciones Diferenciales', fontSize: 10,alignment: 'center'},    
+                {text: '75', fontSize: 10,alignment: 'center'},    
+                {text: '63', fontSize: 10,alignment: 'center'},    
+                {text: '80', fontSize: 10,alignment: 'center'},    
+                {text: '67', fontSize: 10,alignment: 'center'},
+                {text: '80', fontSize: 10,alignment: 'center'},
+              ],
+              [
+                {text: 'Econometría', fontSize: 10,alignment: 'center'},    
+                {text: '75', fontSize: 10,alignment: 'center'},    
+                {text: '63', fontSize: 10,alignment: 'center'},    
+                {text: '80', fontSize: 10,alignment: 'center'},    
+                {text: '67', fontSize: 10,alignment: 'center'},
+                {text: '80', fontSize: 10,alignment: 'center'},
+              ],
+              [
+                {text: 'Estadística', fontSize: 10,alignment: 'center'},    
+                {text: '75', fontSize: 10,alignment: 'center'},    
+                {text: '63', fontSize: 10,alignment: 'center'},    
+                {text: '80', fontSize: 10,alignment: 'center'},    
+                {text: '67', fontSize: 10,alignment: 'center'},
+                {text: '80', fontSize: 10,alignment: 'center'},
+              ],
+              [
+                {text: 'Programación', fontSize: 10,alignment: 'center'},    
+                {text: '75', fontSize: 10,alignment: 'center'},    
+                {text: '63', fontSize: 10,alignment: 'center'},    
+                {text: '80', fontSize: 10,alignment: 'center'},    
+                {text: '67', fontSize: 10,alignment: 'center'},
+                {text: '80', fontSize: 10,alignment: 'center'},
+              ],
+              [
+                {text: 'Física', fontSize: 10,alignment: 'center'},    
+                {text: '75', fontSize: 10,alignment: 'center'},    
+                {text: '63', fontSize: 10,alignment: 'center'},    
+                {text: '80', fontSize: 10,alignment: 'center'},    
+                {text: '67', fontSize: 10,alignment: 'center'},
+                {text: '80', fontSize: 10,alignment: 'center'},
+              ],
+              [
+                {text: 'Química', fontSize: 10,alignment: 'center'},    
+                {text: '75', fontSize: 10,alignment: 'center'},    
+                {text: '63', fontSize: 10,alignment: 'center'},    
+                {text: '80', fontSize: 10,alignment: 'center'},    
+                {text: '67', fontSize: 10,alignment: 'center'},
+                {text: '80', fontSize: 10,alignment: 'center'},
+              ],
+            ]
+          }
+        },
       ]
     };
     pdfMake.createPdf(documentDefinition).open();
