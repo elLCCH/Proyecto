@@ -26,7 +26,7 @@
   }
 
   .color_cuadro1 {
-    background-image: radial-gradient(circle at 120.71% 50%, #ffffff 0, #ffffff 16.67%, #fdfeff 33.33%, #e4e4df 50%, #c9cbbe 66.67%, #b2b7a3 83.33%, #9fa890 100%);
+    background-image: radial-gradient(circle at 50% 50%, #ffff9f 0, #e8d456 50%, #b0a000 100%); 
     overflow: hidden;
   }
 

@@ -7,6 +7,12 @@ import { VisorPDFComponent } from './visor-pdf/visor-pdf.component';
 import { AdministrativosComponent } from './administrativos/administrativos.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { InicioEComponent } from './inicio-e/inicio-e.component';
+import { Modulo1Component } from './modulo1/modulo1.component';
+import { Modulo2Component } from './modulo2/modulo2.component';
+import { Modulo3Component } from './modulo3/modulo3.component';
+import { Modulo4Component } from './modulo4/modulo4.component';
+
 
 const routes: Routes = [
   {path: 'administrativos', component:AdministrativosComponent},
@@ -14,8 +20,13 @@ const routes: Routes = [
   {path: 'PDFMaker', component:PDFMakerComponent},
   {path: 'Pruebas', component:PruebasComponent},
   {path: 'login', component:LoginComponent},
-  {path: 'Inicio', component:InicioComponent},
+  {path: 'InicioE', component:InicioEComponent},
+  {path: '**', component:InicioComponent},
   {path: 'Contactos', component:ContactosComponent},
+  {path: 'modulo1', component:Modulo1Component},
+  {path: 'modulo2', component:Modulo2Component},
+  {path: 'modulo3', component:Modulo3Component},
+  {path: 'modulo4', component:Modulo4Component},
 ];
 
 @NgModule({

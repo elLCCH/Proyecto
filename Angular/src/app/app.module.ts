@@ -20,6 +20,11 @@ import { LoginComponent } from './login/login.component';
 import { InicioComponent } from './inicio/inicio.component';
 import { ContactosComponent } from './contactos/contactos.component';
 import { ReporteComponent } from './reporte/reporte.component';
+import { InicioEComponent } from './inicio-e/inicio-e.component';
+import { Modulo1Component } from './modulo1/modulo1.component';
+import { Modulo2Component } from './modulo2/modulo2.component';
+import { Modulo3Component } from './modulo3/modulo3.component';
+import { Modulo4Component } from './modulo4/modulo4.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +41,12 @@ import { ReporteComponent } from './reporte/reporte.component';
     LoginComponent,
     InicioComponent,
     ContactosComponent,
-    ReporteComponent
+    ReporteComponent,
+    InicioEComponent,
+    Modulo1Component,
+    Modulo2Component,
+    Modulo3Component,
+    Modulo4Component
   ],
   imports: [
     BrowserModule,

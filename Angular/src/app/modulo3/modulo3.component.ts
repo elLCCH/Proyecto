@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-inicio',
-  templateUrl: './inicio.component.html',
-  styleUrls: ['./inicio.component.css']
+  selector: 'app-modulo3',
+  templateUrl: './modulo3.component.html',
+  styleUrls: ['./modulo3.component.css']
 })
-export class InicioComponent implements OnInit {
+export class Modulo3Component implements OnInit {
   ruta = 'http://localhost:8000/';
   constructor() { }
 
