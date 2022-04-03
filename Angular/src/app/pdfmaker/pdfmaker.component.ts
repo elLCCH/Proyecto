@@ -691,21 +691,39 @@ export class PDFMakerComponent implements OnInit {
   openPdfStyle() {
     const documentDefinition = {
       content: [
-        // if you don't need styles, you can use a simple string to define a paragraph
-        'This is a standard paragraph, using default style',
-
-        // using a { text: '...' } object lets you set styling properties
-        { text: 'This paragraph will have a bigger font', fontSize: 15 },
-
-        // if you set pass an array instead of a string, you'll be able
-        // to style any fragment individually
+        {text: 'Tables', style: 'header'},
+        'Official documentation is in progress, this document is just a glimpse of what is possible with pdfmake and its layout engine.',
+        {text: 'A simple table (no headers, no width specified, no spans, no styling)', style: 'subheader'},
+        'The following table has nothing more than a body array',
         {
-          text: [
-            'This paragraph is defined as an array of elements to make it possible to ',
-            { text: 'restyle part of it and make it bigger ', fontSize: 40 },
-            'than the rest.'
-          ]
-        }
+          style: 'tableExample',
+          table: {
+			    widths: ['auto', 'auto', 'auto', '*','auto'],
+            body: [
+              [
+                  {text: 'Gestion-Plan ', fontSize: 12, bold: true,alignment: 'center'},
+                  {text: 'Sigla ', fontSize: 12, bold: true,alignment: 'center'},
+                  {text: 'Par ', fontSize: 12, bold: true,alignment: 'center'},
+                  {text: 'Descripcion de la Materia ', fontSize: 12, bold: true,alignment: 'center'},
+                  {text: 'Nota ', fontSize: 12, bold: true,alignment: 'center'}
+              ],
+              [
+                  {text: '2021-1 - G40T', fontSize: 10,alignment: 'center'},    
+                  {text: 'FIS 1100', fontSize: 10,alignment: 'center'},    
+                  {text: 'C', fontSize: 10,alignment: 'center'},    
+                  {text: 'FISICA I', fontSize: 10},    
+                  {text: '80', fontSize: 10,alignment: 'center'},    
+              ],
+              [
+                  {text: '2021-1 - G40T', fontSize: 10,alignment: 'center'},    
+                  {text: 'FIS 1100', fontSize: 10,alignment: 'center'},    
+                  {text: 'C', fontSize: 10,alignment: 'center'},    
+                  {text: 'FISICA I', fontSize: 10},    
+                  {text: '80', fontSize: 10,alignment: 'center'},    
+              ]
+            ]
+          }
+        },
       ]
     };
     pdfMake.createPdf(documentDefinition).open();

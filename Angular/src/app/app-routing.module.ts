@@ -21,12 +21,12 @@ const routes: Routes = [
   {path: 'Pruebas', component:PruebasComponent},
   {path: 'login', component:LoginComponent},
   {path: 'InicioE', component:InicioEComponent},
-  {path: '**', component:InicioComponent},
   {path: 'Contactos', component:ContactosComponent},
   {path: 'modulo1', component:Modulo1Component},
   {path: 'modulo2', component:Modulo2Component},
   {path: 'modulo3', component:Modulo3Component},
   {path: 'modulo4', component:Modulo4Component},
+  {path: '**', component:InicioComponent},
 ];
 
 @NgModule({
