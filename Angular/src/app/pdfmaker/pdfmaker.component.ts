@@ -691,14 +691,18 @@ export class PDFMakerComponent implements OnInit {
   openPdfStyle() {
     const documentDefinition = {
       content: [
-        {text: 'Tables', style: 'header'},
-        'Official documentation is in progress, this document is just a glimpse of what is possible with pdfmake and its layout engine.',
-        {text: 'A simple table (no headers, no width specified, no spans, no styling)', style: 'subheader'},
-        'The following table has nothing more than a body array',
+       
+        {
+          text: [
+            {text: 'BOLETA DE CALIFICACIONES - GESTIÓN 2022 \n\n\n', bold:true, fontsize:14, alignment:'center'},
+            {text: 'Nombre:  ', bold: true, fontSize:10},{text: 'ALEJANDRA MAMANI \n', bold: false, fontSize:10},
+            {text: 'Carrera: ', bold: true, fontSize:10},{text: 'INGENIERIA EN SISTEMAS \n\n\n', bold: false, fontSize:10},
+          ]
+        }, 
         {
           style: 'tableExample',
           table: {
-			    widths: ['auto', 'auto', 'auto', '*','auto'],
+			    widths: ['auto', 'auto', 'auto', '*','auto'], 
             body: [
               [
                   {text: 'Gestion-Plan ', fontSize: 12, bold: true,alignment: 'center'},
@@ -716,11 +720,81 @@ export class PDFMakerComponent implements OnInit {
               ],
               [
                   {text: '2021-1 - G40T', fontSize: 10,alignment: 'center'},    
-                  {text: 'FIS 1100', fontSize: 10,alignment: 'center'},    
+                  {text: 'MAT 1101', fontSize: 10,alignment: 'center'},    
                   {text: 'C', fontSize: 10,alignment: 'center'},    
-                  {text: 'FISICA I', fontSize: 10},    
-                  {text: '80', fontSize: 10,alignment: 'center'},    
-              ]
+                  {text: 'CÁLCULO I', fontSize: 10},    
+                  {text: '60', fontSize: 10,alignment: 'center'},    
+              ],
+              [
+                  {text: '2021-1 - G40T', fontSize: 10,alignment: 'center'},    
+                  {text: 'MAT 1100', fontSize: 10,alignment: 'center'},    
+                  {text: 'C', fontSize: 10,alignment: 'center'},    
+                  {text: 'ALGEBRA I', fontSize: 10},    
+                  {text: '68', fontSize: 10,alignment: 'center'},    
+             ],
+             [
+                  {text: '2021-1 - G40T', fontSize: 10,alignment: 'center'},    
+                  {text: 'QMC 1100', fontSize: 10,alignment: 'center'},    
+                  {text: 'C', fontSize: 10,alignment: 'center'},    
+                  {text: 'QUÍMICA I', fontSize: 10},    
+                  {text: '75', fontSize: 10,alignment: 'center'},    
+             ],
+             [
+                  {text: '2021-1 - G40T', fontSize: 10,alignment: 'center'},    
+                  {text: 'SIS 1101', fontSize: 10,alignment: 'center'},    
+                  {text: 'C', fontSize: 10,alignment: 'center'},    
+                  {text: 'PROGRAMACIÓN I', fontSize: 10},    
+                  {text: '82', fontSize: 10,alignment: 'center'},    
+             ],
+             [
+                  {text: '2021-1 - G40T', fontSize: 10,alignment: 'center'},    
+                  {text: 'MAT 2102', fontSize: 10,alignment: 'center'},    
+                  {text: 'C', fontSize: 10,alignment: 'center'},    
+                  {text: 'ECONOMETRÍA', fontSize: 10},    
+                  {text: '65', fontSize: 10,alignment: 'center'},    
+             ],
+             [
+                  {text: '2021-1 - G40T', fontSize: 10,alignment: 'center'},    
+                  {text: 'MAT 2204', fontSize: 10,alignment: 'center'},    
+                  {text: 'C', fontSize: 10,alignment: 'center'},    
+                  {text: 'ANÁLISIS NUMÉRICO', fontSize: 10},    
+                  {text: '77', fontSize: 10,alignment: 'center'},    
+             ],
+             [
+                  {text: '2021-1 - G40T', fontSize: 10,alignment: 'center'},    
+                  {text: 'MAT 1208', fontSize: 10,alignment: 'center'},    
+                  {text: 'C', fontSize: 10,alignment: 'center'},    
+                  {text: 'ECUACIONES DIFERENCIALES', fontSize: 10},    
+                  {text: '64', fontSize: 10,alignment: 'center'},    
+             ],
+             [
+                  {text: '2021-1 - G40T', fontSize: 10,alignment: 'center'},    
+                  {text: 'MAT 1135', fontSize: 10,alignment: 'center'},    
+                  {text: 'C', fontSize: 10,alignment: 'center'},    
+                  {text: 'ESTADÍSTICA', fontSize: 10},    
+                  {text: '68', fontSize: 10,alignment: 'center'},    
+             ],
+             [
+                  {text: '2021-1 - G40T', fontSize: 10,alignment: 'center'},    
+                  {text: 'SIS 1400', fontSize: 10,alignment: 'center'},    
+                  {text: 'C', fontSize: 10,alignment: 'center'},    
+                  {text: 'ANÁLISIS DE BALANCE', fontSize: 10},    
+                  {text: '72', fontSize: 10,alignment: 'center'},    
+             ],
+             [
+                  {text: '2021-1 - G40T', fontSize: 10,alignment: 'center'},    
+                  {text: 'SIS 1205', fontSize: 10,alignment: 'center'},    
+                  {text: 'C', fontSize: 10,alignment: 'center'},    
+                  {text: 'ANÁLISIS DISCRETO', fontSize: 10},    
+                  {text: '84', fontSize: 10,alignment: 'center'},    
+             ],
+             [
+                  {text: '2021-1 - G40T', fontSize: 10,alignment: 'center'},    
+                  {text: 'SIS 2130', fontSize: 10,alignment: 'center'},    
+                  {text: 'C', fontSize: 10,alignment: 'center'},    
+                  {text: 'ESTRUCTURA DE COMPUTADORES', fontSize: 10},    
+                  {text: '92', fontSize: 10,alignment: 'center'},    
+          ] 
             ]
           }
         },
