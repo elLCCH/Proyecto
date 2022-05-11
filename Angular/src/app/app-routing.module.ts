@@ -4,7 +4,7 @@ import { LoginComponent } from './login/login.component';
 import { PruebasComponent } from './pruebas/pruebas.component';
 import { PDFMakerComponent } from './pdfmaker/pdfmaker.component';
 import { VisorPDFComponent } from './visor-pdf/visor-pdf.component';
-import { AdministrativosComponent } from './administrativos/administrativos.component';
+import { AdministrativosComponent } from './admins/administrativos/administrativos.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { InicioEComponent } from './inicio-e/inicio-e.component';
