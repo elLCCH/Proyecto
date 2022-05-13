@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { AdministrativosComponent } from './administrativos/administrativos.component';
+import { AdministrativosComponent } from './admins/administrativos/administrativos.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 // import { PdfViewerModule}  from  'ng2-pdf-viewer';
 import { NgxExtendedPdfViewerModule } from 'ngx-extended-pdf-viewer';
