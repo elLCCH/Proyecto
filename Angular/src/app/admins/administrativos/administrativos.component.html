@@ -16,7 +16,11 @@
 <button class="btn btn-secondary btn-sm" type="button" data-toggle="modal" data-target="#ModalEstRegistroConvalidacion">
   <i class="bi bi-eye"></i>Estudiantes con Registro de Convalidacion
 </button>
+<!-- <button type="button" class="btn btn-outline-light font-weight-bold" data-toggle="modal" data-target="#ModalDesigDocentes" data-whatever="@getbootstrap">DESIGNACION DE DOCENTES</button> -->
 <div class="btn-group">
+  <button class="btn btn-success btn-sm" type="button" data-toggle="modal" data-target="#ModalDesigDocentes">
+    <i class="bi bi-eye"></i>
+  </button>
   <button class="btn btn-success btn-sm" type="button" data-toggle="modal" data-target="#ModalVisualizacion">
     <i class="bi bi-eye"></i>
   </button>
@@ -183,6 +187,97 @@
           
           </div>
           <!-- <div class="form-group row"></div> -->
+          
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+        <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="AddAdministrativo()">Guardar</button>
+      </div>
+    </div>
+  </div>
+</div><!-- MODAL DE DESIGNACION DOCENTES -->
+<div class="modal fade" id="ModalDesigDocentes" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-xl">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel"> DESIGNACION DE DOCENTES</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="mb-4" [formGroup]="newAdministrativo">
+          <div class="form-group row">
+            <div class="col-sm-9">
+              <div class="form-group row" style="margin: 0 0;">
+                <label class="form-label col-sm-2">PERIODO: </label>
+                <label class="form-label col-sm-2">GESTIÓN: </label>
+                <label class="form-label col-sm-3">CARRERA: </label>
+                <label class="form-label col-sm-2">GESTIÓN: </label>
+                <button class="btn btn-primary  col-sm-3">IMPRIMIR</button>
+                
+              </div>
+              <div class="form-group row">
+                <input type="text" class="form-control col-sm-2" formControlName="Ap_Paterno">
+                <input type="text" class="form-control col-sm-2" formControlName="Ap_Paterno">
+                <input type="text" class="form-control col-sm-3" formControlName="Ap_Paterno">
+                <input type="text" class="form-control col-sm-2" formControlName="Ap_Paterno">
+              </div>
+              
+            </div>
+            <div class="col-sm-3">
+              
+              <button class="btn btn-success col-sm-12">ACEPTAR</button>
+              <button class="btn btn-secondary col-sm-12">CANCELAR</button>
+            </div>
+          </div>
+          <hr>
+          <div class="table-responsive">
+            <table class="table table-bordered table-striped table-hover table-danger">
+              <thead class="bg-danger ">
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">Nombre Completo</th>
+                  <th scope="col">Carnet</th>
+                  <th scope="col">Sexo</th>
+                  <th scope="col">Tipo</th>
+                  <th scope="col">Acciones</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let a of admin; let i= index"  >
+                  <td>{{i+1}}</td>
+                  <td>
+                    <span *ngIf="!a.Editando">{{a.Ap_Paterno}}⠀</span>
+                    <span *ngIf="!a.Editando">{{a.Ap_Materno}}⠀</span>
+                    <span *ngIf="!a.Editando">{{a.Nombre}}</span>
+                  </td>
+                  <td>
+                    <span *ngIf="!a.Editando">{{a.CI}}</span>
+                  </td>
+                  <td>
+                    <span *ngIf="!a.Editando">{{a.Sexo}}</span>
+                  </td>
+                  <td>
+                      <span *ngIf="!a.Editando">{{a.Tipo}}</span>
+                  </td>
+                  <td style="width: 200px;">
+                    <button type="button" class="btn btn-success"
+                      (click)='AdministrativoSeleccionado=a;' style="margin-right: 10px;"><i class="bi bi-eye"></i></button>
+        
+                    <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#ModalModificacion"
+                      (click)='AdministrativoSeleccionado=a;' style="margin-right: 10px;"><i class="bi bi-pencil"></i></button>
+        
+                   <button type="button" class="btn btn-danger" (click)="EliminarAdministrativo(a.id)">
+                     <i class="bi bi-trash"></i></button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <!-- <span>{{seleccionado | json}}</span> -->
+          
+          </div>
           
         </div>
       </div>
@@ -380,7 +475,7 @@
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel"> REGISTRAR DOCENTE NUEVO</h5>
+        <h5 class="modal-title" id="exampleModalLabel"> VISUALIZANDO DOCENTE</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
