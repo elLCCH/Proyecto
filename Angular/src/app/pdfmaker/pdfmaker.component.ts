@@ -357,7 +357,7 @@ export class PDFMakerComponent implements OnInit {
         
         {text:'\n\n\n\n\n\n\n_______________________', fontSize:15, alignment: 'center', bold:true},
         {text:'Firma del Estudiante o Padre/Tutor',fontSize:10, alignment: 'center', bold:true},
-        {text:'Nºcarnet: 7362600',fontSize:8, alignment: 'center', bold:true}
+        {text:'Nºcarnet: 123456',fontSize:8, alignment: 'center', bold:true}
       ]
     };
     pdfMake.createPdf(documentDefinition).open();
@@ -615,7 +615,7 @@ export class PDFMakerComponent implements OnInit {
        
         {
           text: [
-            {text: 'BOLETA DE CALIFICACIONES - GESTIÓN 2022 \n\n\n', bold:true, fontsize:14, alignment:'center'},
+            {text: 'SEGUIMIENTO ACADEMICO - GESTIÓN 2022 \n\n\n', bold:true, fontsize:14, alignment:'center'},
             {text: 'Nombre:  ', bold: true, fontSize:10},{text: 'ALEJANDRA MAMANI \n', bold: false, fontSize:10},
             {text: 'Carrera: ', bold: true, fontSize:10},{text: 'INGENIERIA EN SISTEMAS \n\n\n', bold: false, fontSize:10},
           ]
