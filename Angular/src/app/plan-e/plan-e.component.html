@@ -1,0 +1,137 @@
+<p>plan-e works!</p>
+
+
+<div class="container" >
+    <div class="d-flex justify-content-center h-100">
+        <div class="card card1">
+            <div class="card-header" style="text-align:center;text-align: center; background-image: radial-gradient(circle at 120.71% 50%, #ffffff 0, #ffffff 16.67%, #fdfeff 33.33%, #e4e4df 50%, #c9cbbe 66.67%, #b2b7a3 83.33%, #9fa890 100%); ">
+                
+                <div class="container">
+                    <div class="d-flex justify-content-center h-50">
+                        <div class="card" style="width:120rem; height: 5;">
+                             <div class="card-body color_cuadro1" style="text-align: center;">
+                                <h3 style="font-weight:bolder"> Registrar Plan de Estudios</h3>
+                                <!-- <img [src]="ruta+'fijos/images/9.png'" alt="" >         -->
+                             </div>
+                        </div>
+                  </div>
+                </div>
+           </div>
+           
+           <hr>
+           <div class="card-body" >
+               
+                   
+            <div class="input-group form-group">
+                <div class="input-group-prepend">
+              <span class="input-group-text" id=""><i style="font-weight: bold;">Código de Plan:</i></span>
+                </div>
+                <input type="text"  name="pr_materia_p" class="form-control" placeholder=""  values="" disabled>
+              </div>          
+                    <div class="input-group form-group">
+                        <div class="input-group-prepend">
+                      <span class="input-group-text" id=""><i style="font-weight: bold;">Número de Semestres o Años:</i></span>
+                        </div>
+                        <input type="text"  name="n_semestre" class="form-control" placeholder=""  values="" disabled>
+                      </div>
+                      <div class="input-group form-group">
+                        <div class="input-group-prepend">
+                      <span class="input-group-text" id=""><i style="font-weight: bold;">Carrera:</i></span>
+                        </div>
+                        <input type="text"  name="nombre_carr" class="form-control" placeholder=""  values="" disabled>
+                      </div>
+
+           </div>
+<!----------------------------Tabla------------------------------>
+
+<div style="background-color: gray">
+    <h4 style="color: white">Plan de estudios
+     </h4>
+     </div>
+     <div style="height: 400px; overflow: scroll;">
+     <table class="table table-responsive" >
+   <thead style="background-color: gray;color: white " >
+     <tr>
+       <th scope="col">Id</th>
+       <th scope="col">Código de Plan</th>
+       <th scope="col">Carrera</th>
+       <th scope="col">Semestre</th>
+       <th scope="col"></th>
+       <th scope="col"></th>
+     </tr>
+   </thead>
+   <tbody>
+   
+   <!------------------------------------------------------------------------------------------------>  
+   <!--<?php 
+    $query = "SELECT * from tb_chofer ";
+     $resultado = mysqli_query($conn, $query); 
+ 
+     
+         while($fila = mysqli_fetch_array( $resultado ) ){
+       echo "<tr>";
+       echo "<td><div><label><strong>".$fila['id_cho']."<strong><label><div></td>";
+       ?>  
+       <form action='motoristamod.php' method='POST'>
+       <td>
+         <input type='hidden' value="<? php echo $fila['id_cho'];?>" name="id_cho" >
+       <input style="font-weight: bolder" type='text' value="<?php echo $fila['nom_chofer'];?>" name="nom_chofer" >
+       </td>
+       <td>
+        <input style="font-weight: bolder" type='text' value="<?php echo $fila['cedula'];?>" name="cedula" > 
+       </td>
+       <td>
+         <input style="font-weight: bolder" type='text' value="<?php echo $fila['cel_chofer'];?>" name="cel_chofer" >
+       </td>
+             
+       <td>
+       
+       <input style="font-weight: bolder" type='submit'  style="width: 90px" value='Modificar' class='btn btn-primary'>
+       </form>
+       </td> 
+       <td>
+       <form action='motoristaelim.php' method='POST'>
+        <input type='hidden' name='id_cho' value="<?php echo $fila['id_cho'];?>">
+       <input style="font-weight: bolder" type='submit' style="width: 90px" value='Eliminar' class='btn btn-danger'> 
+       </form>
+       </td> 
+ 
+    <?php  
+    echo "</tr>";
+  } ?> -->
+       
+  <form action='' method='POST'>
+    <td>
+      <input type='hidden' value="" name="id_planE" >
+    <input style="font-weight: bolder" type='text' value="" name="Id" >
+    </td>
+    <td>
+     <input style="font-weight: bolder" type='text' value="" name="Cod_gestE" > 
+    </td>
+    <td>
+      <input style="font-weight: bolder" type='text' value="" name="nombre_carre" >
+    </td>
+    <td>
+        <input style="font-weight: bolder" type='text' value="" name="numero" >
+      </td>
+          
+      
+    <input style="font-weight: bolder" type='submit'  style="width: 90px" value='Modificar' class='btn btn-primary'>
+    
+    
+    <td>
+    <form action='' method='POST'>
+     <input type='hidden' name='id_sem' value="">
+    <input style="font-weight: bolder" type='submit' style="width: 90px" value='Eliminar' class='btn btn-danger'> 
+    </form>
+    </td> 
+</form>
+   <!------------------------------------------------------------------------------------------------>  
+   </tbody>
+ </table>
+ 
+     </div>
+   
+  </div> 
+
+

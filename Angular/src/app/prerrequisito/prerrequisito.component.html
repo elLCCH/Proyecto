@@ -1,0 +1,165 @@
+<p>prerrequisito works!</p>
+
+<div class="container" >
+    <div class="d-flex justify-content-center h-100">
+        <div class="card card1">
+            <div class="card-header" style="text-align:center;text-align: center; background-image: radial-gradient(circle at 120.71% 50%, #ffffff 0, #ffffff 16.67%, #fdfeff 33.33%, #e4e4df 50%, #c9cbbe 66.67%, #b2b7a3 83.33%, #9fa890 100%); ">
+                
+                <div class="container">
+                    <div class="d-flex justify-content-center h-50">
+                        <div class="card" style="width:120rem; height: 5;">
+                             <div class="card-body color_cuadro1" style="text-align: center;">
+                                <h3 style="font-weight:bolder"> Registrar Materia </h3>
+                                <!-- <img [src]="ruta+'fijos/images/9.png'" alt="" >         -->
+                             </div>
+                        </div>
+                  </div>
+                </div>
+           </div>
+           
+           <hr>
+           <div class="card-body" >
+               
+                   
+            <div class="input-group form-group">
+                <div class="input-group-prepend">
+              <span class="input-group-text" id=""><i style="font-weight: bold;">Nombre de Materia:</i></span>
+                </div>
+                <input type="text"  name="pr_materia_p" class="form-control" placeholder=""  values="" disabled>
+              </div>          
+                    <div class="input-group form-group">
+                        <div class="input-group-prepend">
+                      <span class="input-group-text" id=""><i style="font-weight: bold;">Cógido o Sigla de Materia:</i></span>
+                        </div>
+                        <input type="text"  name="pr_materia_p" class="form-control" placeholder=""  values="" disabled>
+                      </div>
+
+           </div>
+           <div class="card-body" >
+               
+            <h3 style="font-weight:bolder"> Registrar Prerrequisitos </h3>
+                    
+            <div class="input-group form-group">
+                <div class="input-group-prepend">
+              <span class="input-group-text" id=""><i style="font-weight: bold;">Prerrequisito 1:</i></span>
+                </div>
+                <input type="text"  name="pr_materia_p" class="form-control" placeholder=""  values="" disabled>
+              </div>
+
+              <div class="input-group form-group">
+                <div class="input-group-prepend">
+              <span class="input-group-text" id=""><i style="font-weight: bold;">Prerrequisito 2: </i></span>
+                </div>
+                <input type="message"  name="pr_materia_r" class="form-control" placeholder="" values="" disabled>
+              </div>
+
+   </div>
+
+<!--sector 1 i-->
+
+     
+
+    <div class="form-group">
+        <input style="font-weight: bolder; " type="submit" value="Aceptar" class="btn float-right btn-primary">
+        <input style="font-weight: bolder; " type="submit" value="Cancelar" class="btn float-right btn-danger">
+    </div>
+   
+<br>
+   
+<!--sector 1 f-->
+
+<!------------------------------------------------------------------------------------->
+
+
+<!-- MODAL DE VISUALIZACION -->
+
+<!-- MODAL DE ADICION -->
+ 
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel"> REGISTRAR DOCENTE NUEVO</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="mb-4">
+         <!--<div class="mb-4" [formGroup]="newAdministrativo">-->
+          <div class="form-group row">
+            <label class="form-label text-right col-sm-2">CODIGO: </label>
+            <input type="text" class="form-control col-sm-4" formControlName="Ap_Paterno">
+            <label class="form-label text-right col-sm-2">GRADO: </label>
+            <input type="text" class="form-control col-sm-4" formControlName="Ap_Paterno">
+          </div>
+          <div class="form-group row">
+          <label class="form-label text-right col-sm-2">A. PATERNO: </label>
+          <input type="text" class="form-control col-sm-10" formControlName="Ap_Paterno">
+          </div>
+          <div class="form-group row">
+            <label class="form-label text-right col-sm-2">A. MATERNO: </label>
+            <input type="text" class="form-control col-sm-10" formControlName="Ap_Materno">
+          </div>
+          <div class="form-group row">
+            <label class="form-label text-right col-sm-2">NOMBRES: </label>
+            <input type="text" class="form-control col-sm-10" formControlName="Nombre">
+          </div>
+          
+          <div class="form-group row">
+            <label class="form-label text-right col-sm-2">CI: </label>
+            <input type="text" class="form-control col-sm-4" formControlName="Sexo">
+            <label class="form-label text-right col-sm-2">EXPEDIDO EN: </label>
+            <input type="text" class="form-control col-sm-4" formControlName="FechNac">
+          </div>
+          <div class="form-group row">
+            <label class="form-label text-right col-sm-2">TEL. DOMICILIO: </label>
+            <input type="text" class="form-control col-sm-4" formControlName="CI">
+            <label class="form-label text-right col-sm-2">CELULAR: </label>
+            <input type="text" class="form-control col-sm-4" formControlName="Password">
+          </div>
+          
+          <div class="form-group row">
+            <label class="form-label text-right col-sm-2">FECHA DE NACIMIENTO: </label>
+            <input type="date" class="form-control col-sm-4" formControlName="Tipo">
+            <label class="form-label text-right col-sm-2">LUGAR: </label>
+            <input type="text" class="form-control col-sm-4" formControlName="Ap_Paterno">
+          </div>
+          <div class="form-group row">
+            <label class="form-label  text-right col-sm-2">E-MAIL: </label>
+            <input type="text" class="form-control col-sm-10" formControlName="Ap_Paterno">
+          </div>
+          <div class="form-group row">
+            <label class="form-label text-right col-sm-2">DOMICILIO </label>
+            <input type="text" class="form-control col-sm-10" formControlName="Ap_Paterno">
+          </div>
+          <div class="form-group row">
+            <label class="form-label text-right col-sm-2">ESTADO CIVIL: </label>
+            <input type="text" class="form-control col-sm-4" formControlName="Ap_Paterno">
+            <label class="form-label text-right col-sm-2">NACIONALIDAD: </label>
+            <input type="text" class="form-control col-sm-4" formControlName="Ap_Paterno">
+          </div>
+          <div class="form-group row">
+            <label class="form-label text-right col-sm-2">DIRECCIÓN DE TRABAJO: </label>
+            <input type="text" class="form-control col-sm-10" formControlName="Ap_Paterno">
+          </div>
+          <div class="form-group row">
+            <label class="form-label text-right col-sm-2">TEL. TRABAJO: </label>
+            <input type="text" class="form-control col-sm-4" formControlName="Ap_Paterno">
+            <label class="form-label text-right col-sm-2">FOTO: </label>
+            <input type="file" class="form-control col-sm-4" formControlName="Ap_Paterno">
+          </div>
+          <div class="form-group row">
+            <label class="form-label text-right col-sm-2">OBSERVACIONES </label>
+            <input type="text" class="form-control col-sm-10" formControlName="Ap_Paterno">
+          </div>
+          <!-- <div class="form-group row"></div> -->
+          
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Guardar</button>
+        <!-- <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="AddAdministrativo()">Guardar</button>-->
+      </div>
+    </div>
+  
+

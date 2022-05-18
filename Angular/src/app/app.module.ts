@@ -25,6 +25,10 @@ import { Modulo1Component } from './modulo1/modulo1.component';
 import { Modulo2Component } from './modulo2/modulo2.component';
 import { Modulo3Component } from './modulo3/modulo3.component';
 import { Modulo4Component } from './modulo4/modulo4.component';
+import { PrerrequisitoComponent } from './prerrequisito/prerrequisito.component';
+import { EstudianteComponent } from './estudiante/estudiante.component';
+import { SemestreComponent } from './semestre/semestre.component';
+import { PlanEComponent } from './plan-e/plan-e.component';
 
 @NgModule({
   declarations: [
@@ -46,7 +50,11 @@ import { Modulo4Component } from './modulo4/modulo4.component';
     Modulo1Component,
     Modulo2Component,
     Modulo3Component,
-    Modulo4Component
+    Modulo4Component,
+    PrerrequisitoComponent,
+    EstudianteComponent,
+    SemestreComponent,
+    PlanEComponent
   ],
   imports: [
     BrowserModule,
