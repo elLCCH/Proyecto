@@ -7,20 +7,10 @@ import axios from 'axios';
   styleUrls: ['./prerrequisito.component.css']
 })
 export class PrerrequisitoComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
-}
-
-export class AdministrativosComponent implements OnInit {
-
   Texto;
   ruta = 'http://localhost:8000/';
   admin =[ ];
-  
+
   AdministrativoSeleccionado = {
     id:'',
     Ap_Paterno:'',
@@ -33,7 +23,7 @@ export class AdministrativosComponent implements OnInit {
     Tipo:'',
     Estado:''
   };
-  
+
 
   newAdministrativo = new FormGroup({
     Ap_Paterno:new FormControl(''),
@@ -101,9 +91,9 @@ export class AdministrativosComponent implements OnInit {
       headers:{'Content-Type':'multipart/form-data'}
     })
 
-  
+
     .then(res=>{
-      
+
       console.log('SE MODIFICO CORRECTAMENTE');
       console.log(res);
       this.CargarAdministrativo();
@@ -134,5 +124,6 @@ export class AdministrativosComponent implements OnInit {
     console.log("err");
     });
   }
-}
 
+
+}
